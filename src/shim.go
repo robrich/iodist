@@ -14,8 +14,8 @@ const pathSep = string(os.PathSeparator)
 func main() {
   // Prerequisites
 
-  if "" == os.Getenv("NODIST_PREFIX") {
-    fmt.Println("Please set the path to the nodist directory in the NODIST_PREFIX environment variable.")
+  if "" == os.Getenv("IODIST_PREFIX") {
+    fmt.Println("Please set the path to the iodist directory in the IODIST_PREFIX environment variable.")
     os.Exit(40)
   }
 
@@ -24,19 +24,19 @@ func main() {
   
   var version string = ""
   
-  if v := os.Getenv("NODE_VERSION"); v != "" {
+  if v := os.Getenv("IOJS_VERSION"); v != "" {
     version = v
-    //fmt.Println("NODE_VERSION found:'", version, "'")
+    //fmt.Println("IOJS_VERSION found:'", version, "'")
   } else
-  if v = os.Getenv("NODIST_VERSION"); v != "" {
+  if v = os.Getenv("IODIST_VERSION"); v != "" {
     version = v
-    //fmt.Println("NODIST_VERSION found:'", version, "'")
+    //fmt.Println("IODIST_VERSION found:'", version, "'")
   } else
   if v, _, err := getLocalVersion(); err == nil && strings.Trim(string(v), " \r\n") != "" {
     version = string(v)
     //fmt.Println("Local file found:'", version, "' @ ", localFile)
   } else
-  if v, err := ioutil.ReadFile(os.Getenv("NODIST_PREFIX")+"\\.node-version"); err == nil {
+  if v, err := ioutil.ReadFile(os.Getenv("IODIST_PREFIX")+"\\.node-version"); err == nil {
     version = string(v)
     //fmt.Println("Global file found:'", version, "'")
   }
@@ -44,7 +44,7 @@ func main() {
   version = strings.Trim(version, "v \r\n")
 
   if version == "" {
-    fmt.Println("Sorry, there's a problem with nodist. Couldn't decide which node version to use. Please set a version.")
+    fmt.Println("Sorry, there's a problem with iodist. Couldn't decide which node version to use. Please set a version.")
     os.Exit(41)
   }
   
@@ -53,7 +53,7 @@ func main() {
 
   x64 := (os.Getenv("PROCESSOR_ARCHITECTURE") == "x64")
 
-  if wantX64 := os.Getenv("NODIST_X64"); wantX64 != "" {
+  if wantX64 := os.Getenv("IODIST_X64"); wantX64 != "" {
     x64 = (wantX64 == "1")
   }
 
@@ -63,14 +63,14 @@ func main() {
   var path string
   var nodebin string
 
-  path = os.Getenv("NODIST_PREFIX")+"/v"
+  path = os.Getenv("IODIST_PREFIX")+"/v"
 
   if x64 {
     path += "-x64"
   }
   
   path = path+"/"+version
-  nodebin = path+"/node.exe"
+  nodebin = path+"/iojs.exe"
   
   
   // Get args
@@ -98,7 +98,7 @@ func main() {
       // You know it. Black Magic...
       os.Exit(exitError.Sys().(syscall.WaitStatus).ExitStatus())
     } else {
-      fmt.Println("Sorry, there's a problem with nodist.")
+      fmt.Println("Sorry, there's a problem with iodist.")
       fmt.Println("Error: ", err)
       os.Exit(42)
     }
@@ -113,7 +113,7 @@ func getLocalVersion() (version string, file string, error error) {
     return
   }
   
-  dirSlice := strings.Split(dir, pathSep) // D:\Programme\nodist => [D:, Programme, nodist]
+  dirSlice := strings.Split(dir, pathSep) // D:\Programme\iodist => [D:, Programme, iodist]
   
   for len(dirSlice) != 1 {
     dir = strings.Join(dirSlice, pathSep)

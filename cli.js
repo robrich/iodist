@@ -1,5 +1,5 @@
 /*!
- * nodist
+ * iodist
  * A Node version manager for the windows folks out there.
  * Copyright 2012 by Marcel Klehr <mklehr@gmx.net>
  *
@@ -24,7 +24,7 @@
  */
 
 var version = process.argv[2]
-  , nodist   = require('./lib/nodist')
+  , iodist   = require('./lib/iodist')
   , path     = require('path')
   , fs       = require('fs')
 ;
@@ -51,20 +51,20 @@ function help() {
 
 
 
-process.title = 'nodist';
+process.title = 'iodist';
 
-if(!process.env['NODIST_PREFIX']) abort('Please set the path to the nodist directory in the NODIST_PREFIX environment variable.')
+if(!process.env['IODIST_PREFIX']) abort('Please set the path to the iodist directory in the IODIST_PREFIX environment variable.')
 
-var distUrl = 'http://nodejs.org/dist'
-var nodistPrefix = process.env['NODIST_PREFIX'].replace('"', '')
+var distUrl = 'http://iojs.org/dist'
+var iodistPrefix = process.env['IODIST_PREFIX'].replace('"', '')
 var proxy = (process.env.HTTP_PROXY || process.env.http_proxy || process.env.HTTPS_PROXY || process.env.https_proxy || "");
-var wantX64 = process.env['NODIST_X64']!=null? process.env['NODIST_X64']==1 : (process.arch=='x64'); // if the env var is set, use its value, other wise use process.arch
-var envVersion = process.env['NODIST_VERSION']? process.env['NODIST_VERSION'].replace('"', '') : process.env['NODIST_VERSION']
+var wantX64 = process.env['IODIST_X64']!=null? process.env['IODIST_X64']==1 : (process.arch=='x64'); // if the env var is set, use its value, other wise use process.arch
+var envVersion = process.env['IODIST_VERSION']? process.env['IODIST_VERSION'].replace('"', '') : process.env['IODIST_VERSION']
 
-// Create a nodist instance
-var n = new nodist(
+// Create a iodist instance
+var n = new iodist(
   distUrl
-, nodistPrefix
+, iodistPrefix
 , proxy.replace("https://", "http://") //replace https for http, nodejs.org/dist doesnt support https 
 , wantX64
 , envVersion
@@ -81,7 +81,7 @@ command = argv[0];
 
 
 
-// -V Display nodist version
+// -V Display iodist version
 if (args.match(/-v/i) !== null) {
   console.log(require('./package.json').version);
   exit();
@@ -92,7 +92,7 @@ if (args.match(/--help/i)) {
   help();
 }
 
-// (bare call of 'nodist') -> list
+// (bare call of 'iodist') -> list
 if (!argv[0]) {
   command = 'list';
 }

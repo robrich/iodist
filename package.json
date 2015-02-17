@@ -1,13 +1,13 @@
-{ "name" : "nodist",
+{ "name" : "iodist",
   "version": "0.5.2",
-  "description": "Natural node version manager for windows",
+  "description": "Natural iojs version manager for windows",
   "keywords": ["node", "version", "manager", "build", "windows"],
   "author": "Marcel Klehr <mklehr@gmx.net>",
-  "homepage": "https://github.com/marcelklehr/nodist",
-  "bugs": { "url": "https://github.com/marcelklehr/nodist/issues" },
+  "homepage": "https://github.com/marcelklehr/iodist",
+  "bugs": { "url": "https://github.com/marcelklehr/iodist/issues" },
   "repository" :
     { "type" : "git"
-    , "url" : "http://github.com/marcelklehr/nodist.git"
+    , "url" : "http://github.com/marcelklehr/iodist.git"
     },
   "dependencies": {
     "request": "~2.9",

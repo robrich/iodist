@@ -1,71 +1,71 @@
-A node version manager for windows
+An iojs version manager for windows
 
 Usage:
 
-    nodist                          List all installed node versions.
-    nodist list
-    nodist ls
+    iodist                          List all installed iojs versions.
+    iodist list
+    iodist ls
 
-    nodist dist                     List all available node versions.
-    nodist ds
+    iodist dist                     List all available iojs versions.
+    iodist ds
 
-    nodist add <version>            Download the specified node version.
-    nodist + <version>
+    iodist add <version>            Download the specified iojs version.
+    iodist + <version>
 
-    nodist rm <version>             Uninstall the specified node version.
-    nodist - <version>
+    iodist rm <version>             Uninstall the specified iojs version.
+    iodist - <version>
     
-    nodist <version>                Use the specified node version globally
-    nodist global <version>         (downloads the executable, if necessary).
+    iodist <version>                Use the specified iojs version globally
+    iodist global <version>         (downloads the executable, if necessary).
     
-    nodist use <version>            Use <version> in the current environment only
-    nodist env <version>            (usually the current terminal window).
+    iodist use <version>            Use <version> in the current environment only
+    iodist env <version>            (usually the current terminal window).
 
-    nodist local <version>          Use <version> in this directory and its subdirectories.
-                                    (will add a ./node-version file)
+    iodist local <version>          Use <version> in this directory and its subdirectories.
+                                    (will add an ./iojs-version file)
 
-    nodist args <version> <args..>  Set command line args that will always be passed
+    iodist args <version> <args..>  Set command line args that will always be passed
                                     to this version (e.g. --harmony-generators or v8 tweaks).
                                     Omit <args..> to reset.
 
-    nodist run <version> -- <args..>    Run <args> with the specified node version
-    nodist r <version> -- <args..>      (downloads the executable, if necessary).
+    iodist run <version> -- <args..>    Run <args> with the specified iojs version
+    iodist r <version> -- <args..>      (downloads the executable, if necessary).
 
-    nodist bin <version>            Get the path to the specified node executable
+    iodist bin <version>            Get the path to the specified iojs executable
                                     (downloads the executable, if necessary).
     
-    nodist path <version>           Get the path to the specified node version directory
+    iodist path <version>           Get the path to the specified iojs version directory
                                     (downloads the executable, if necessary).
 
-    nodist selfupdate               Update nodist's dependencies.
+    iodist selfupdate               Update iodist's dependencies.
     
-    nodist --help                   Display this help
+    iodist --help                   Display this help
 
-    nodist -v                       Display nodist version
+    iodist -v                       Display iodist version
 
 Examples:
 
-    nodist 0.8.1                    Use node v0.8.1 globally
+    iodist 0.8.1                    Use iojs v0.8.1 globally
     
-    nodist v0.5.10                  Use node v0.5.10 globally
+    iodist v0.5.10                  Use iojs v0.5.10 globally
     
-    nodist - 0.5.10                 Uninstall node v0.5.10
+    iodist - 0.5.10                 Uninstall iojs v0.5.10
     
-    nodist r v0.8.1 -- foo.js -s    Run `foo.js -s` with node v0.8.1, regardless
+    iodist r v0.8.1 -- foo.js -s    Run `foo.js -s` with iojs v0.8.1, regardless
                                     of the global version
                                     
-    nodist latest                   Use the latest available node version globally
+    iodist latest                   Use the latest available iojs version globally
                                     (downloads the executable, if necessary).
                                    
-    nodist stable                   Use the latest stable available node version
+    iodist stable                   Use the latest stable available iojs version
                                     globally (downloads the executable, if necessary).
                                    
-    nodist + all                    Installs *all* available node versions.
+    iodist + all                    Installs *all* available iojs versions.
                                     (Get yourself a cuppa in the meantime...)
 
 Env vars:
 
-    NODIST_X64                      Will always use the 64bit versions if set to '1'
+    IODIST_X64                      Will always use the 64bit versions if set to '1'
 
     HTTP_PROXY                      Will use the Url and port specified as a proxy
                                     (e.g. http://myproxy.com:8213 )

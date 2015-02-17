@@ -1,5 +1,5 @@
 # iodist
-An iojs version manager for the windows folks out there. Inspired by [n](https://github.com/visionmedia/n). And [iojsnv](https://github.com/OiNutter/iojsnv).
+An iojs version manager for the windows folks out there. Inspired by [n](https://github.com/visionmedia/n) and [nodenv](https://github.com/OiNutter/nodenv), froked from [nodist](https://github.com/marcelklehr/nodist).
 
 ```
 > iodist 0.10

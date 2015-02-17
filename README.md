@@ -1,5 +1,5 @@
 # iodist
-An iojs version manager for the windows folks out there. Inspired by [n](https://github.com/visionmedia/n) and [nodenv](https://github.com/OiNutter/nodenv), froked from [nodist](https://github.com/marcelklehr/nodist).
+An io.js version manager for the windows folks out there. Inspired by [n](https://github.com/visionmedia/n) and [nodenv](https://github.com/OiNutter/nodenv), froked from [nodist](https://github.com/marcelklehr/nodist).
 
 ```
 > iodist 0.10
@@ -20,7 +20,7 @@ v0.10.26
 
 
 ## Installation
-Iodist was designed to replace any existing iojs.js installation, so *if iojs is already installed on your machine, uninstall it first*.
+Iodist was designed to replace any existing io.js installation, so *if io.js is already installed on your machine, uninstall it first*.
 
 ### DIY installation
 1. `git clone git://github.com/marcelklehr/iodist.git` (or grab the [zip](https://github.com/marcelklehr/iodist/zipball/master))  

@@ -30,7 +30,7 @@ Iodist was designed to replace any existing io.js installation, so *if io.js is 
 
 3. `set IODIST_PREFIX="path\to\iodist"`
 
-4. `set NODE_PATH="path\to\iodist\bin\iojs_modules;%NODE_PATH%"` if you want your globally-installed modules to be visible in `iojs` REPL
+4. `set NODE_PATH="path\to\iodist\bin\node_modules;%NODE_PATH%"` if you want your globally-installed modules to be visible in `iojs` REPL
 
 5. Run `iodist selfupdate` (updates the dependencies and sets npm's global prefix)
 

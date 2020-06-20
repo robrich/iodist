@@ -10,7 +10,7 @@
     , "url" : "http://github.com/marcelklehr/iodist.git"
     },
   "dependencies": {
-    "request": "~2.9",
+    "request": "~2.88",
     "mkdirp": "~0.3",
     "semver": "*",
     "rimraf": "~2"
